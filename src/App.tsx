@@ -1,14 +1,16 @@
 import { h, ref, defineComponent } from "vue";
-import TopConfig from "./components/TopConfig";
-import Toolbar from "./components/Toolbar";
-import MainPanel from "./components/MainPanel";
+import TopConfig from "./views/TopConfig";
+import Toolbar from "./views/Toolbar";
+import MainPanel from "./views/MainPanel";
 export default defineComponent({
   setup(props, context) {
     return () => (
       <div class="ps-canvas">
         <TopConfig />
-        <Toolbar />
-        <MainPanel />
+        <div class="ps-canvas__main-container">
+          <Toolbar />
+          <MainPanel />
+        </div>
       </div>
     );
   },

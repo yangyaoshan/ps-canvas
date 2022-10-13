@@ -61,41 +61,6 @@ i {
 a:focus {
   outline: 0;
 }
-
-input,
-fieldset {
-  appearance: none;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  /*inputs and fieldset defaults to having a min-width equal to its content in Chrome and Firefox (https://code.google.com/p/chromium/issues/detail?id=560762), we may not want that*/
-  min-width: 0;
-  /*Reset the font size and family*/
-  font-size: 1rem;
-  font-family: inherit;
-}
-
-/* For IE, we want to remove the default cross ('X') that appears in input fields when a user starts typing - Make sure you add your own! */
-input::-ms-clear {
-  display: none;
-}
-
-/*This switches the default outline off when an input receives focus (really important for users tabbing through with a keyboard) so ensure you put something decent in for your input focus instead!!*/
-input:focus {
-  outline: 0;
-}
-
-input[type="number"] {
-  /*Mozilla shows the spinner UI on number inputs unless we use this:*/
-  -moz-appearance: textfield;
-}
-
-/*Removes the little spinner controls for number type inputs (WebKit browsers/forks only)*/
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  appearance: none;
-}
-
 /*SVG defaults to inline display which I dislike*/
 svg {
   display: inline-flex;
@@ -107,3 +72,25 @@ img {
   /*Make images display as a block (UA default is usually inline)*/
   display: block;
 }
+
+// 组件样式start
+.toolbar-button {
+  > button.toolbar-button__inner {
+    border: none;
+    width: 26px;
+    height: 26px;
+    padding: 4px;
+    background: none;
+    &:hover {
+      border: 1px #ccc solid;
+    }
+    &.selected {
+      background: #efefef;
+      border: 1px #ccc solid;
+    }
+    > i {
+      font-size: 16px;
+    }
+  }
+}
+// 组件样式end

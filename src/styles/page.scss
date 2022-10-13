@@ -1,8 +1,32 @@
 .ps-canvas {
+  $box-border: 1px solid #ddd;
+  @mixin box-border {
+    border: $box-border;
+  }
+  $top-height: 60px;
   .top-config {
+    @include box-border;
+    height: $top-height;
+    > .top-config__control {
+      height: 25px;
+    }
   }
-  .toolbar {
-  }
-  .main-panel {
+  .ps-canvas__main-container {
+    display: flex;
+    height: calc(100vh - $top-height);
+    $toolbar-width: 40px;
+    $toolbar-padding: $toolbar-width - 26px - 4px;
+    .toolbar {
+      @include box-border;
+      width: $toolbar-width;
+      padding: calc($toolbar-padding/2);
+      > .toolbar-button {
+        margin-bottom: 5px;
+      }
+    }
+    .main-panel {
+      @include box-border;
+      width: calc(100vw - $toolbar-width);
+    }
   }
 }

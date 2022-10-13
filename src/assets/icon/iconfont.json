@@ -1,0 +1,79 @@
+{
+  "id": "3702674",
+  "name": "ps-canvas",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1264",
+      "name": "编辑",
+      "font_class": "pancel",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "587163",
+      "name": "virtual-d",
+      "font_class": "select-circle",
+      "unicode": "e831",
+      "unicode_decimal": 59441
+    },
+    {
+      "icon_id": "1393684",
+      "name": "move",
+      "font_class": "move",
+      "unicode": "e6ff",
+      "unicode_decimal": 59135
+    },
+    {
+      "icon_id": "3230924",
+      "name": "虚线",
+      "font_class": "select-rectangle",
+      "unicode": "e74b",
+      "unicode_decimal": 59211
+    },
+    {
+      "icon_id": "7616256",
+      "name": "滴管",
+      "font_class": "dropper",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "8794817",
+      "name": "text",
+      "font_class": "text",
+      "unicode": "e7bc",
+      "unicode_decimal": 59324
+    },
+    {
+      "icon_id": "11468160",
+      "name": "椭圆",
+      "font_class": "oval",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "18171136",
+      "name": "橡皮,擦除,橡皮擦",
+      "font_class": "rubber",
+      "unicode": "ea15",
+      "unicode_decimal": 59925
+    },
+    {
+      "icon_id": "18171237",
+      "name": "裁剪,剪开",
+      "font_class": "crop",
+      "unicode": "ea33",
+      "unicode_decimal": 59955
+    },
+    {
+      "icon_id": "22935911",
+      "name": "矩形",
+      "font_class": "rectangle",
+      "unicode": "e8e8",
+      "unicode_decimal": 59624
+    }
+  ]
+}
