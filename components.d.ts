@@ -7,8 +7,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    DropDownApp: typeof import('./src/components/DropDownApp.vue')['default']
+    DropDownFile: typeof import('./src/components/DropDownFile.vue')['default']
+    ElDropdown: typeof import('element-plus/es')['ElDropdown']
+    ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
+    ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ToolbarButton: typeof import('./src/components/ToolbarButton.vue')['default']
     TopConfig: typeof import('./src/components/TopConfig.vue')['default']
   }
 }

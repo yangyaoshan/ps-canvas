@@ -8,7 +8,16 @@
     @include box-border;
     height: $top-height;
     > .top-config__control {
-      height: 25px;
+      height: 30px;
+      border-bottom: $box-border;
+      > .top-config__control__drop-down {
+        padding: 5px 3px;
+        margin: 2px;
+        margin-left: 5px;
+        &:hover {
+          background: #efefef;
+        }
+      }
     }
   }
   .ps-canvas__main-container {
@@ -27,6 +36,9 @@
     .main-panel {
       @include box-border;
       width: calc(100vw - $toolbar-width);
+    }
+    .right-config {
+      width: 300px;
     }
   }
 }
