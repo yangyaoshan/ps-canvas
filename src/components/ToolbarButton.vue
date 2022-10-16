@@ -12,10 +12,6 @@
 <script setup lang="ts">
 const emit = defineEmits(["click"]);
 const props = defineProps({
-  sign: {
-    type: String,
-    require: true,
-  },
   icon: {
     type: String,
     require: true,
@@ -27,8 +23,30 @@ const props = defineProps({
 });
 function handleClick(ev: Event) {
   ev.stopPropagation();
-  emit("click", props.sign);
+  emit("click");
 }
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+// 组件样式start
+.toolbar-button {
+  > button.toolbar-button__inner {
+    border: none;
+    width: 26px;
+    height: 26px;
+    padding: 4px;
+    background: none;
+    &:hover {
+      border: 1px #ccc solid;
+    }
+    &.selected {
+      background: #efefef;
+      border: 1px #ccc solid;
+    }
+    > i {
+      font-size: 16px;
+    }
+  }
+}
+// 组件样式end
+</style>

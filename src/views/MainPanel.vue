@@ -1,6 +1,6 @@
 <template>
   <div class="main-panel">
-    <canvas width=""></canvas>
+    <canvas class="main-panel__layer"></canvas>
   </div>
 </template>
 
@@ -10,4 +10,8 @@ let cnvWidth = ref(0);
 let cnvHeight = ref(0);
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.main-panel__layer {
+  background-image: url("../assets/images/ps-transparent-bg.png");
+}
+</style>

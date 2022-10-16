@@ -6,27 +6,31 @@
       :sign="obj.key"
       :icon="obj.icon"
       :selected="obj.key === selectedButton"
-      @click="clickToolbarButton"
+      @click="() => clickToolbarButton(obj.key)"
     />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, reactive } from "vue";
+import { useStore } from "vuex";
 import ToolbarButton from "../components/ToolbarButton.vue";
-let selectedButton = ref("move");
+let selectedButton = ref("");
+const store = useStore();
+// handleToolbar(selectedButton.value)
+clickToolbarButton("select-rectangle");
 const iconList = reactive([
   {
     icon: "iconfont icon-move",
     key: "move",
   },
   {
-    icon: "iconfont icon-select-circle",
-    key: "select-circle",
-  },
-  {
     icon: "iconfont icon-select-rectangle",
     key: "select-rectangle",
+  },
+  {
+    icon: "iconfont icon-select-circle",
+    key: "select-circle",
   },
   {
     icon: "iconfont icon-oval",
@@ -58,7 +62,11 @@ const iconList = reactive([
   },
 ]);
 function clickToolbarButton(key: string) {
+  console.log("file: Toolbar.vue ~ line 65 ~ clickToolbarButton ~ key", key);
   selectedButton.value = key;
+  store.commit("layer/changeTool", {
+    key,
+  });
 }
 </script>
 

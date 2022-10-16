@@ -10,7 +10,7 @@
     > .top-config__control {
       height: 30px;
       border-bottom: $box-border;
-      > .top-config__control__drop-down {
+      .top-config__control__drop-down {
         padding: 5px 3px;
         margin: 2px;
         margin-left: 5px;
@@ -36,6 +36,7 @@
     .main-panel {
       @include box-border;
       width: calc(100vw - $toolbar-width);
+      background: #999;
     }
     .right-config {
       width: 300px;
