@@ -1,10 +1,20 @@
 import { Module } from "vuex";
-const store: Module<{}, {}> = {
+interface State {
+  appInfo: AppInfo | null;
+}
+interface AppInfo {
+  width: string;
+  height: string;
+  background: string;
+}
+const store: Module<State, {}> = {
   state: {
     appInfo: null,
   },
   mutations: {
-    newApp() {},
+    setAppInfo(state, info: AppInfo) {
+      state.appInfo = info;
+    },
   },
   actions: {},
   getters: {},

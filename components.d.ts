@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    CanvasLayer: typeof import('./src/components/CanvasLayer.vue')['default']
     DialogAppConfig: typeof import('./src/components/DialogAppConfig.vue')['default']
     DialogLayerConfig: typeof import('./src/components/DialogLayerConfig.vue')['default']
     DropDownApp: typeof import('./src/components/DropDownApp.vue')['default']

@@ -4,7 +4,7 @@ interface State {
   // width: number;
   // height: number;
   layers: never[];
-  toolCommand: string;
+  toolCommand: ToolCommand | null;
 }
 
 const store: Module<State, {}> = {
@@ -13,10 +13,10 @@ const store: Module<State, {}> = {
     // width: 0,
     // height: 0,
     layers: [],
-    toolCommand: "",
+    toolCommand: null,
   },
   mutations: {
-    changeTool(state, obj: { key: string }) {
+    changeTool(state, obj: { key: ToolCommand }) {
       state.toolCommand = obj.key;
     },
   },

@@ -45,12 +45,15 @@
 import { reactive, ref } from "vue";
 import type { FormInstance, FormRules } from "element-plus";
 import { getSelects } from "../utils/selects";
+import { useStore } from "vuex";
+const emit = defineEmits(["update:modelValue"]);
+const store = useStore();
 
 const ruleFormRef = ref<FormInstance>();
 const backgroundOptions = getSelects("appBackground");
 const ruleForm = reactive({
-  width: "300",
-  height: "200",
+  width: "454",
+  height: "340",
   background: backgroundOptions[0].value,
 });
 const dialogVisible = ref(false);
@@ -72,13 +75,21 @@ const rules = reactive<FormRules>({
   ],
 });
 
+const close = () => {
+  emit("update:modelValue", false);
+};
+if (import.meta.env.DEV === true) {
+  store.commit("setAppInfo", ruleForm);
+}
+
 const submitForm = async (formEl: FormInstance | undefined) => {
   if (!formEl) return;
   await formEl.validate((valid, fields) => {
     if (valid) {
-      console.log("submit!");
-    } else {
-      console.log("error submit!", fields);
+      // console.log("submit!");
+      store.commit("setAppInfo", ruleForm);
+      close();
+      // dialogVisible.value = false;
     }
   });
 };

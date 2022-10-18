@@ -18,50 +18,55 @@ import ToolbarButton from "../components/ToolbarButton.vue";
 let selectedButton = ref("");
 const store = useStore();
 // handleToolbar(selectedButton.value)
-clickToolbarButton("select-rectangle");
-const iconList = reactive([
+clickToolbarButton("SelectRectangle");
+interface IconList {
+  key: ToolCommand;
+  icon: string;
+}
+
+const iconList: IconList[] = reactive([
   {
     icon: "iconfont icon-move",
-    key: "move",
+    key: "Move",
   },
   {
     icon: "iconfont icon-select-rectangle",
-    key: "select-rectangle",
+    key: "SelectRectangle",
   },
   {
     icon: "iconfont icon-select-circle",
-    key: "select-circle",
+    key: "SelectCircle",
   },
   {
     icon: "iconfont icon-oval",
-    key: "draw-oval",
+    key: "DrawOval",
   },
   {
     icon: "iconfont icon-rectangle",
-    key: "draw-rectangle",
+    key: "DrawRectangle",
   },
   {
     icon: "iconfont icon-pancel",
-    key: "draw-pancel",
+    key: "DrawPancel",
   },
   {
     icon: "iconfont icon-dropper",
-    key: "get-color",
+    key: "GetColor",
   },
   {
     icon: "iconfont icon-text",
-    key: "input-text",
+    key: "InputText",
   },
   {
     icon: "iconfont icon-rubber",
-    key: "clear-canvas",
+    key: "ClearCanvas",
   },
   {
     icon: "iconfont icon-crop",
-    key: "crop-canvas",
+    key: "CropCanvas",
   },
 ]);
-function clickToolbarButton(key: string) {
+function clickToolbarButton(key: ToolCommand) {
   console.log("file: Toolbar.vue ~ line 65 ~ clickToolbarButton ~ key", key);
   selectedButton.value = key;
   store.commit("layer/changeTool", {
